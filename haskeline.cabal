@@ -69,6 +69,7 @@ Library
                 System.Console.Haskeline.MonadException
                 System.Console.Haskeline.History
                 System.Console.Haskeline.IO
+                System.Console.Haskeline.Prefs
     Other-Modules:
                 System.Console.Haskeline.Backend
                 System.Console.Haskeline.Backend.WCWidth
@@ -82,7 +83,6 @@ Library
                 System.Console.Haskeline.Key
                 System.Console.Haskeline.LineState
                 System.Console.Haskeline.Monads
-                System.Console.Haskeline.Prefs
                 System.Console.Haskeline.RunCommand
                 System.Console.Haskeline.Term
                 System.Console.Haskeline.Command.Undo
