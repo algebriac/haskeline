@@ -2,12 +2,6 @@
 #
 # NB: don't set `language: haskell` here
 env:
- - CABALVER=1.16 GHCVER=7.0.1
- - CABALVER=1.16 GHCVER=7.0.2
- - CABALVER=1.16 GHCVER=7.0.3
- - CABALVER=1.16 GHCVER=7.0.4
- - CABALVER=1.16 GHCVER=7.2.1
- - CABALVER=1.16 GHCVER=7.2.2
  - CABALVER=1.16 GHCVER=7.4.1
  - CABALVER=1.16 GHCVER=7.4.2
  - CABALVER=1.16 GHCVER=7.6.1
@@ -28,10 +22,6 @@ before_install:
 install:
  - cabal --version
  - echo "$(ghc --version) [$(ghc --print-project-git-commit-id 2> /dev/null || echo '?')]"
- - |
-   if [ "$GHCVER" = "7.2.1" ]; then
-     sudo /opt/ghc/$GHCVER/bin/ghc-pkg trust base # To avoid a SafeHaskell bug on GHC 7.2.1
-   fi
  - travis_retry cabal update
  - cabal install --only-dependencies
  - cabal install "Cabal == $CABALVER.*"  # Use the same Cabal version for Setup.hs and cabal-install
